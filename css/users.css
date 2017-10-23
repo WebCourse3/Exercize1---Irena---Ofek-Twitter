@@ -1,0 +1,61 @@
+#searcharea {
+    height: 3vh;
+    width: 28%;
+    margin-top: 1vh;
+    margin-left: 12%;
+}
+
+.inline-search {
+    display: inline-block;
+}
+
+#found {
+    width: 58%;
+    height: 40vh;
+    margin-left: 12%;
+}
+
+.followbox {
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    width: 17%;
+    height: 15vh;
+    display: inline-block;
+    margin-top: 1vh;
+    margin-right: 1% ;
+}
+
+.boxy {
+    margin-left: 10%;
+    position: center;
+    width: 80%;
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.marginTop {
+    margin-top: 0.5vh;
+}
+
+#followees {
+    width: 15%;
+    height: 40vh;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.inlineThis {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.followboxFollowee {
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    width: 60%;
+    height: 15vh;
+    display: inline-block;
+    margin-top: 1vh;
+}

@@ -1,0 +1,74 @@
+#tweetertext {
+    width: 80%;
+    height: 18vh;
+    margin-left: 10%;
+    margin-top: 2vh;
+}
+
+.inlinetweet {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.longtext {
+    margin-left: 10%;
+    width: 80%;
+    height: 15vh;
+}
+
+#longtext {
+    width: 99%;
+    height: 14vh;
+    resize: none;
+
+}
+
+::-webkit-input-placeholder {
+    line-height: 13vh;
+}
+
+.publish {
+    width: 8%;
+    height: 3vh;
+    margin-top: 5vh;
+    vertical-align: top;
+}
+
+#publish {
+    width:99%;
+    height: 3vh;
+    font-size: 0.8em;
+}
+
+#tweets {
+    margin-left: 18%;
+    width: 70%;
+}
+
+.blocks {
+    display: block;
+}
+
+.regulartext {
+    font-weight: lighter;
+}
+
+.tweet {
+    margin-top: 2vh;
+}
+
+.tweet:nth-of-type(2) {
+    margin-left: 6%;
+}
+
+.tweet:nth-of-type(3) {
+    margin-left: 12%;
+}
+
+.tweet:nth-of-type(4) {
+    margin-left: 18%;
+}
+
+.tweet:nth-of-type(5) {
+    margin-left: 24%;
+}
