@@ -4,36 +4,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ofek Twitter | Sign In</title>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!--  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
 <body>
-    <header >
-        <ul>
-            <li class="left"><a  href="index.html"><img id="logo" src="img/ofek.png">  Ofek Twitter</a></li>
-            <li class="right"><a  href="SignIn.html">Sign In</a></li>
-            <li class="right"><a  href="SignUp.html">Sign Up</a></li>
-            <li class="right"><a  href="Users.html">Users</a></li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
+            <a class="navbar-brand" href="index.html"> Ofek Twitter </a>
+            <img id="logo" class="nav navbar-nav" src="img/ofek.png">
+        </div>
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav ">
+                <li ><a  href="SignIn.html">Sign In</a></li>
+                <li ><a  href="SignUp.html">Sign Up</a></li>
+                <li><a  href="Users.html">Users</a></li>
+            </ul>
+        </div>
+    </div>
 
-        </ul>
-    </header>
-    <div class="form">
-        <form id="sign">
-            <div id="header">Sign In </div>
-            <div class="box">
-                <div class="inline">
-                    <label>Username</label>
-                    <input type="text" id="username" class="form-textline"/>
-                </div>
-                <div class="inline">
-                    <label>Password</label>
-                    <input type="password" id="password" class="form-textline"/>
+</nav>
+<div class=" goDown container ">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+<div class="panel panel-primary ">
+    <div class="panel-heading">Sign In</div>
+    <div class="panel-body" >
+        <div class="form-horizontal">
+    <div class="form-group">
+        <label for="userName" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-10">
+            <input id="userName" type="text" class="form-control" placeholder="Username">
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                <input id="password" type="password" class="form-control " placeholder="Password">
                 </div>
             </div>
-            <input id="submit" class="button" type="submit">
-        </form>
+            <div class="col-sm-offset-4 col-sm-2">
+                <input type="submit" value="login" class="btn btn-primary">
+            </div>
+        </div>
+</div>
+</div>
+        </div>
     </div>
+</div>
+
 
 </body>
 </html>

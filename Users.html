@@ -4,96 +4,170 @@
 <head>
 	<meta charset="UTF-8">
     <title>Ofek Twitter | Users</title>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <!--  <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/users.css" >
+    <link rel="stylesheet" type="text/css" href="css/users.css" > -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/usersWithBootstrap.css">
 </head>
 <body>
-<header >
-    <ul>
-        <li class="left"><a  href="index.html"><img id="logo" src="img/ofek.png">  Ofek Twitter</a></li>
-        <li class="right"><a  href="SignIn.html">Sign In</a></li>
-        <li class="right"><a  href="SignUp.html">Sign Up</a></li>
-        <li class="right"><a  href="Users.html">Users</a></li>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"> Ofek Twitter </a>
+            <img id="logo" class="nav navbar-nav" src="img/ofek.png">
+        </div>
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+    <ul class="nav navbar-nav ">
+        <li ><a  href="SignIn.html">Sign In</a></li>
+        <li ><a  href="SignUp.html">Sign Up</a></li>
+        <li><a  href="Users.html">Users</a></li>
     </ul>
-</header>
+            </div>
+        </div>
 
-<div id="searcharea">
-    <div class="inline-search"><label>Filter by</label> </div>
-    <div class="inline-search"> <input id="searchfield" placeholder="user name" type="text"> </div>
-    <div class="inline-search"> <button type="submit">ok</button> </div>
+</nav>
+
+
+<div class=" goDown col-md-offset-1 col-md-5  inline">
+
+        <form class="form-inline">
+            <input type="text" class="form-control" placeholder="Filter by user name">
+            <input type="submit" value="OK" class="btn btn-primary">
+        </form>
+
 </div>
 
-<div id="found" class="inlineThis">
-    <div class="followbox">
-        <div class="boxy">
-     <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonFollow marginTop" > <button class="follow"> follow</button> </div>
-        <div class="name marginTop"> <label>Marty McFly </label> </div>
+<div class="container">
+    <div class="row " >
+        <div class=" col-md-10  goDown">
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Marty McFly </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default text-center">
+                    <div class="panel-body">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Janis Joplin</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> unfollow</button>
+                        <label>Albert Eintein</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Gengis Khan</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> unfollow</button>
+                        <label>Dracula</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Forest Gump</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Caligula</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Winnie Pooh</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> follow</button>
+                        <label>Obama</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 pull-left">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="img/useravatar.png"/>
+                        <button class="btn btn-default btn-primary rowBetween"> unfollow</button>
+                        <label>Henry the 8th</label>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonFollow marginTop" > <button class="follow"> follow</button> </div>
-        <div class="name marginTop"> <label>James Bond </label> </div>
+
+        <div class="col-md-2 goDown">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                   <h4>Followees</h4>
+                    <div class="panel panel-default">
+                        <div class="panel-body text-center">
+                            <img src="img/useravatar.png"/>
+                            <button class="btn btn-default btn-primary rowBetween"> unfollow</button>
+                            <label>Dracula</label>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body text-center">
+                            <img src="img/useravatar.png"/>
+                            <button class="btn btn-default btn-primary rowBetween"> unfollow</button>
+                            <label>Henry the 8th</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonunFollow marginTop" > <button class="unfollow"> unfollow</button> </div>
-        <div class="name marginTop"> <label>Janis Joplin </label> </div>
-        </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonFollow marginTop" > <button class="follow"> follow</button> </div>
-        <div class="name marginTop"> <label>Mark Twain </label> </div>
-        </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonunFollow marginTop" > <button class="unfollow"> unfollow</button> </div>
-        <div class="name marginTop"> <label>Albert Einstein </label> </div>
-        </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonFollow marginTop" > <button class="follow"> follow</button> </div>
-        <div class="name marginTop"> <label>Frodo </label> </div>
-        </div>
-    </div>
-    <div class="followbox">
-        <div class="boxy">
-        <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-        <div class="buttonFollow marginTop" > <button class="follow"> follow</button> </div>
-        <div class="name marginTop"> <label>Bill Gates</label> </div>
-        </div>
+
     </div>
 </div>
 
-<div id="followees" class="inlineThis">
-    <div class="followeelabel">
-        <label> Followees </label>
-    </div>
-    <div class="followboxFollowee">
-        <div class="boxy">
-            <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-            <div class="buttonunFollow marginTop" > <button class="unfollow"> unfollow</button> </div>
-            <div class="name marginTop"> <label>Albert Einstein </label> </div>
-        </div>
-    </div>
-    <div class="followboxFollowee">
-        <div class="boxy">
-            <div class="pic marginTop"><img src="img/useravatar.png"/></div>
-            <div class="buttonunFollow marginTop" > <button class="unfollow"> unfollow</button> </div>
-            <div class="name marginTop"> <label>Janis Joplin </label> </div>
-        </div>
-    </div>
-</div>
+
+
 </body>
 </html>
