@@ -38,41 +38,17 @@
 <div class="container goDown">
     <div class="row">
         <div class="col-xs-12">
-            <textarea class="form-control" rows="6"  type="text" placeholder="tweet text..."></textarea>
+            <textarea id="tweetTextBox" class="form-control" rows="6"  type="text" placeholder="tweet text..."></textarea>
         </div>
         <div class="col-xs-12" >
-            <button type="submit" class="btn btn-primary pull-right">publish</button>
+            <button  type="submit" class="btn btn-primary pull-right" onclick="getTweet()">publish</button>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row" >
-        <div class="col-xs-12 rowBetween" >
-            <img class=" pull-left" src="img/useravatar.png">
-            <span><b>James Bond says: </b> </span> </br>
-            <span> Blabla bla </span>
-        </div>
-        <div class="col-xs-12 rowBetween" >
-            <img class=" pull-left" src="img/useravatar.png">
-            <span><b>James Bond says: </b> </span> </br>
-            <span> Bond, James Bond </span>
-        </div>
-        <div class="col-xs-12 rowBetween" >
-            <img class=" pull-left" src="img/useravatar.png">
-            <span><b>Albert Einstein says: </b> </span> </br>
-            <span>E=mc^2 </span>
-        </div>
-        <div class="col-xs-12 rowBetween" >
-            <img class=" pull-left" src="img/useravatar.png">
-            <span><b>Bill Gates says: </b> </span> </br>
-            <span>I think 64 bytes should be enough for everyone </span>
-        </div>
-    <div class="col-xs-12 rowBetween" >
-        <img class=" pull-left" src="img/useravatar.png">
-        <span><b>Frodo says: </b> </span> </br>
-        <span>My precious </span>
-    </div>
+    <div id="bigTweet" class="row" >
+        <!-- here the javascript does the work -->
 </div>
 </div>
 
@@ -81,4 +57,6 @@
 
 
 </body>
+<script type="text/javascript" src="js/tweets.js"></script>
+
 </html>
