@@ -3,7 +3,7 @@ var alltweets = [
     {"name":"James Bond", "tweet": "Bond, James Bond"},
     {"name":"Albert Einstein", "tweet": "E=mc^2"},
     {"name":"Bill Gates", "tweet": "I think 64 bytes should be enough for everyone"},
-    {"name":"Frodo", "tweet": "My precious"}
+    {"name":"Frodo", "tweet": "My precious "}
 ];
 
 function ready() {
