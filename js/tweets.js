@@ -22,8 +22,7 @@ function getTweet() {
 
 function newTweet(tweetBlock) {
     var bigDiv = document.getElementById("bigTweet");
-    var newDiv = document.createElement("div");
-    newDiv.setAttribute("class","col-xs-12 rowBetween");
+    var newDiv = createDiv("col-xs-12 rowBetween");
     var avatarPic = document.createElement("img");
     avatarPic.setAttribute("src","img/useravatar.png");
     avatarPic.setAttribute("class","pull-left");
@@ -39,6 +38,12 @@ function newTweet(tweetBlock) {
     newDiv.appendChild(br);
     newDiv.appendChild(spanNorm);
     bigDiv.appendChild(newDiv);
+}
+
+function createDiv(divClass)
+{
+    var div = document.createElement("div");
+    div.setAttribute(divClass);
 }
 
 

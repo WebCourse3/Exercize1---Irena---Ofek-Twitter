@@ -22,19 +22,16 @@ window.onload = ready;
 function FollowersCreation(someFollowFellow) {
     var bigDiv = document.getElementById("bigDiv");
 
-    var firstDiv = document.createElement("div");
-    firstDiv.setAttribute("class","col-md-2 pull-left");
+    var firstDiv = createDiv("col-md-2 pull-left");
 
-    var secondDiv = document.createElement("div");
-    secondDiv.setAttribute("class","panel panel-default");
+    var secondDiv = createDiv("panel panel-default");
 
-    var thirdDiv = document.createElement("div");
-    thirdDiv.setAttribute("class","panel-body text-center");
+    var thirdDiv = createDiv("panel-body text-center");
 
     var avatarPic = document.createElement("img");
     avatarPic.setAttribute("src","img/useravatar.png");
 
-    var button = createFollowOrUnfollow(someFollowFellow);
+    var button = createFollowOrUnfollowButton(someFollowFellow);
     button.onclick = checkTheFellow;
     button.setAttribute("id", someFollowFellow.username.toString().replace(/\s/g,''));
     var label = document.createElement("label");
@@ -56,7 +53,13 @@ function FollowersCreation(someFollowFellow) {
     }
 }
 
-function createFollowOrUnfollow(someFollowFellow) {
+function createDiv(divClass)
+{
+    var div = document.createElement("div");
+    div.setAttribute(divClass);
+}
+
+function createFollowOrUnfollowButton(someFollowFellow) {
     var btn = document.createElement("button");
     var text = document.createTextNode(someFollowFellow.status.toString());
     if(someFollowFellow.status.toString() === "follow")
@@ -78,16 +81,14 @@ function followeeCreation(someFollowFellow) {
     var followees = document.getElementById("followees");
 
 
-    var secondDiv = document.createElement("div");
-    secondDiv.setAttribute("class","panel panel-default "  + someFollowFellow.username.toString().replace(/\s/g,''));
+    var secondDiv = createDiv("panel panel-default "  + someFollowFellow.username.toString().replace(/\s/g,''));
 
-    var thirdDiv = document.createElement("div");
-    thirdDiv.setAttribute("class","panel-body text-center");
+    var thirdDiv = createDiv("panel-body text-center");
 
     var avatarPic = document.createElement("img");
     avatarPic.setAttribute("src","img/useravatar.png");
 
-    var button = createFollowOrUnfollow(someFollowFellow);
+    var button = createFollowOrUnfollowButton(someFollowFellow);
     button.onclick = checkTheFellow;
     var label = document.createElement("label");
     label.innerHTML = someFollowFellow.username.toString();
