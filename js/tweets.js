@@ -32,6 +32,7 @@ function newTweet(tweetBlock) {
     var br = document.createElement("br");
     var spanNorm = document.createElement("span");
     spanNorm.innerHTML = tweetBlock.tweet.toString();
+
     newDiv.appendChild(avatarPic);
     span.appendChild(b);
     newDiv.appendChild(span);
@@ -43,7 +44,9 @@ function newTweet(tweetBlock) {
 function createDiv(divClass)
 {
     var div = document.createElement("div");
-    div.setAttribute(divClass);
+    div.setAttribute("class", divClass);
+
+    return div;
 }
 
 

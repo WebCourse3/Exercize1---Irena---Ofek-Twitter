@@ -44,7 +44,7 @@ function FollowersCreation(someFollowFellow) {
     secondDiv.appendChild(thirdDiv);
 
     firstDiv.appendChild(secondDiv);
-
+ 
     bigDiv.appendChild(firstDiv);
 
     if(someFollowFellow.status.toString() === "unfollow")
@@ -56,7 +56,9 @@ function FollowersCreation(someFollowFellow) {
 function createDiv(divClass)
 {
     var div = document.createElement("div");
-    div.setAttribute(divClass);
+    div.setAttribute("class", divClass);
+
+    return div;
 }
 
 function createFollowOrUnfollowButton(someFollowFellow) {
