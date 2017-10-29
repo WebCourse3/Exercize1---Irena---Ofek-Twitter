@@ -1,5 +1,5 @@
 //some nice functions
-
+//some some
 var users = [
     {"username":"Marty McFly","status":"follow"},
     {"username":"Janis Joplin","status":"follow"},
