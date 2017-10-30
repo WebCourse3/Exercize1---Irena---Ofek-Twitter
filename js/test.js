@@ -9,6 +9,7 @@ function test_group(testGroupName, asserts) {
     someTestGroup.setAttribute("class","row");
     someTestGroup.setAttribute("role","alert");
     someTestGroup.setAttribute("class","alert alert-success");
+    someTestGroup.innerHTML = "<label>" + testGroupName + "</label>";
 
     asserts();
 }
