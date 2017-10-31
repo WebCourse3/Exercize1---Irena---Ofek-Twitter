@@ -1,167 +1,99 @@
+function $(query){
+    return new ofekQuery(query);
 
-var OfekQuery = function (query) {
+}
 
-    if(!(query.contains(" ")))
-    {
-        switch (query.charAt(0)) {
-            case '.':
-                this.element = document.getElementsByClassName(query.substr(1, query.length - 1));
-                break;
-            case '#':
-                this.element = document.getElementById(query.substr(1, query.length - 1));
-                break;
-            default:
-                this.element = document.getElementsByTagName(query);
+var ofekQuery = function(query){
+    this.items = [] ;
+
+    this.addClass = function (class_name) {
+        for(var i = 0 ;i< this.items.length;i++){
+            this.items[i].classList.add(class_name);
         }
+    };
+
+    this.removeClass = function (class_name) {
+        for(var i = 1 ;i< this.items.length;i++){
+            this.items[i].classList.remove(class_name);
+        }
+    };
+
+    this.each = function(func_name){
+        for(var i = 0;i<this.items.length;i++){
+            func_name(this.items[i]);
+        }
+    };
+
+    var someBlackBox = query.split(' ');
+    this.items = firstCheck(someBlackBox[0]);
+
+    for(var i=1;i<someBlackBox.length;i++){
+        this.items = CheckResults(someBlackBox[i],this.items);
+    }
+}
+
+function CheckResults(operator,results) {
+    operator = operator.toUpperCase();
+    results = Array.prototype.slice.call(results);
+
+    if(operator.charAt(0) == '.') {
+        return FindByClassName(results,operator);
     }
     else
     {
-        var tokens = [];
-        var countForTokens = query.split(" ").length;
-        for(var i=0; i<countForTokens; i++)
-        {
-            tokens[i] = query.split(" ",i);
-        }
-
+        return FindByTag(results,operator);
     }
-
-
-    this.addClass = function (class_name) {
-        if (this.element.count === 1) {
-            this.element.classList.add(class_name);
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].classList.add(class_name);
-            }
-
-        }
-
-    }
-
-    this.removeClass = function (class_name) {
-        if (this.element.count === 1) {
-            this.element.classList.remove(class_name);
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].classList.remove(class_name);
-            }
-
-        }
-    }
-
-    this.each = function (fn) {
-        if (this.element.count === 1) {
-            this.element.fn;
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].fn;
-            }
-
-        }
-    }
-
-    this.map = function (fn) {
-        if (this.element.count === 1) {
-           return this.element.fn;
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                return this.element[i].fn;
-            }
-
-        }
-    }
-
-    // here should be some annoying function i have no idea what to do with them
-
-    this.css = function (property, value) {
-        if (this.element.count === 1) {
-            this.element.setAttribute("style", property + ": " + value);
-
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].setAttribute("style", property + ": " + value);
-            }
-
-        }
-    }
-
-    this.count = function () {
-        if (this.element.count === 1) {
-            return this.element.childElementCount;
-
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-               return this.element[i].childElementCount;
-            }
-
-        }
-    }
-
-    this.appendChild = function (childElement) {
-        if (this.element.count === 1) {
-            this.element.appendChild(childElement);
-
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].appendChild(childElement);
-            }
-
-        }
-    }
-
-    this.getAttribute = function (attributeName) {
-        if (this.element.count === 1) {
-           return this.element.getAttribute(attributeName);
-
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-               return this.element[i].getAttribute(attributeName);
-            }
-
-        }
-    }
-
-    this.setAttribute = function (attributeName, attributeValue) {
-        if (this.element.count === 1) {
-             this.element.setAttribute(attributeName, attributeValue);
-
-        }
-        else {
-            for (var i = 0; i < this.element.count; i++) {
-                this.element[i].setAttribute(attributeName, attributeName);
-            }
-
-        }
-    }
-
-    this.get = function (index) {
-        if (this.element.count === 1) {
-            return this.element;
-        }
-        else
-        {
-            return this.element[index];
-        }
-    }
-
-
-}
-function $(name){
-    return new OfekQuery(name);
 }
 
+function FindByTag(results,operator) {
+    var tmp = [];
+    tmp =  Array.prototype.slice.call(tmp);
+    for(var j = 0 ;j<results.length;j++)
+    {
+        if(results[j].childNodes.length>0)
+        {
+            for(var i=0;i<results[j].childNodes.length;i++){
+                if(results[j].childNodes[i].tagName == operator)
+                    tmp.push(results[j].childNodes[i]);
+            }
+        }
+        else if(results[j].tagName == operator){
+            tmp.push(results[j]);
+        }
+    }
+    return tmp;
+}
 
+function FindByClassName(results,operator) {
+    return results.filter(function (result) {
+        return result.classList.contains(operator.substring(1,result.length));
+    });
+}
 
+function firstCheck(operator) {
 
+    if(operator.charAt(0)=='#'){
+        return getByID(operator);
+    }
+    else if(operator.charAt(0)=='.'){
+        return getByClass(operator);
+    }
+    else {
+        return getByTag(operator);
+    }
+}
 
+function getByID(element) {
+    var list = [];
+    list = Array.prototype.slice.call(list);
+    list[0] = document.getElementById(element.substring(1,element.length));
+    return list;
+}
 
+function getByTag(element) {
+    return document.getElementsByTagName(element);
+}
 
-
+function getByClass(element) {
+    return document.getElementsByClassName(element.substring(1,element.length));
+}
